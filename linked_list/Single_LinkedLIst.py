@@ -105,7 +105,6 @@ class LinkedList:
     def reverse(self):
         temp = self.head
         prev = None
-
         while temp:
             save = temp.next
             temp.next = prev
@@ -119,13 +118,10 @@ class LinkedList:
     def sorting(self):
         val = []
         temp = self.head
-
         while temp:
             val.append(temp.data)
             temp = temp.next
-
         val.sort()
-
         temp = self.head
         for i in val:
             temp.data = i
@@ -135,20 +131,16 @@ class LinkedList:
     # Insert a node at a specific position (0-based index)
     def insert_at_position(self, index, data):
         new_node = Node(data)
-
         if index == 0:
             new = self.head
             self.head = new_node
             new_node.next = new
             return
-
         count = 0
         temp = self.head
-
         while temp and count < index - 1:
             temp = temp.next
             count += 1
-
         new_node.next = temp.next
         temp.next = new_node
 
@@ -158,14 +150,11 @@ class LinkedList:
         if index == 0:
             self.head = self.head.next
             return
-
         temp = self.head
         count = 0
-
         while temp and count < index - 1:
             temp = temp.next
             count += 1
-
         temp.next = temp.next.next
 
 
@@ -174,11 +163,9 @@ class LinkedList:
         if self.head.data == val:
             self.head = self.head.next
             return
-
         temp = self.head
         while temp and temp.next.data != val:
             temp = temp.next
-
         temp.next = temp.next.next
 
 
