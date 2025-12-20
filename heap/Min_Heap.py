@@ -46,7 +46,9 @@ x.insert(10)
 x.insert(20)
 x.insert(30)
 x.insert(40)
-# x.remove()
+x.insert(5)
+x.insert(26)
+x.remove()
 print(x.heap)
 
 
