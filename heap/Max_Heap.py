@@ -54,7 +54,7 @@ x = MaxHeap()
 x.build_heap([10, 20, 5, 6, 1, 8])
 print(x.heap)  # max heap
 
-x.insert(30)
+# x.insert(30)
 print(x.heap)
 
 print(x.remove())  # removes max
