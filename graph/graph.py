@@ -89,5 +89,5 @@ x.remove_vertex("A")
 print("\nAfter removal of A:")
 x.show()
 
-print("\nBFS from B:", g.bfs("B"))
-print("DFS from B:", g.dfs("B"))
+print("\nBFS from B:", x.bfs("B"))
+print("DFS from B:", x.dfs("B"))
