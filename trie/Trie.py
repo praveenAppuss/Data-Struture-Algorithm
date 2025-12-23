@@ -11,19 +11,10 @@ class TrieNode:
 
 
 class Trie:
-    """
-    Trie (Prefix Tree) implementation for efficient
-    insertion, search, and prefix-based operations.
-    """
     def __init__(self):
         self.root = TrieNode()  # Root node does not store any character
 
     def insert(self, word):
-        """
-        Inserts a word into the Trie.
-
-        :param word: string to be inserted
-        """
         current = self.root
         for char in word:
             # Create a new node if character not present
@@ -35,7 +26,6 @@ class Trie:
     def search(self, word):
         """
         Checks whether a complete word exists in the Trie.
-
         :param word: string to search
         :return: True if word exists, False otherwise
         """
@@ -49,7 +39,6 @@ class Trie:
     def start_with(self, prefix):
         """
         Checks whether any word in the Trie starts with the given prefix.
-
         :param prefix: prefix string
         :return: True if prefix exists, False otherwise
         """
@@ -68,17 +57,14 @@ class Trie:
             # If end of a word is reached, print it
             if node.end:
                 print("".join(path))
-
             # Traverse all children
             for char, child in node.children.items():
                 dfs(child, path + [char])
-
         dfs(self.root, [])
 
     def autocomplete(self, prefix):
         """
         Returns all words in the Trie that start with the given prefix.
-
         :param prefix: prefix string
         :return: list of matching words
         """
@@ -87,15 +73,12 @@ class Trie:
             if char not in current.children:
                 return []
             current = current.children[char]
-
         words = []
-
         def dfs(node, path):
             if node.end:
                 words.append("".join(path))
             for char, child in node.children.items():
                 dfs(child, path + [char])
-
         dfs(current, list(prefix))
         return words
 
