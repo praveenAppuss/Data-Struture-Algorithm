@@ -47,3 +47,23 @@ def largerst_element(arr, index=0, large=0):
 
 
 print(largerst_element(arr))
+
+# Binary search
+
+def binary_search(arr, left, right, target):
+    if left > right:
+        return -1
+    mid = (left + right) // 2
+    if arr[mid] == target:
+        return mid
+    if arr[mid] < target:
+        return binary_search(arr, mid + 1, right, target)
+    else:
+        return binary_search(arr, left, mid - 1, target)
+
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target = 8
+left = 0
+right = len(arr) - 1
+print(binary_search(arr, left, right, target))
